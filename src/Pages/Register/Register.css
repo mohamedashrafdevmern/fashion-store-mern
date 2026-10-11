@@ -1,0 +1,112 @@
+.register-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: #f7f7f7;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 430px;
+  padding: 42px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.register-container h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+}
+
+.register-subtitle {
+  margin: 10px 0 32px;
+  text-align: center;
+  color: #777;
+  font-size: 15px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+.form-group input:focus {
+  border-color: #222;
+  box-shadow: 0 0 0 3px rgba(34, 34, 34, 0.08);
+}
+
+.register-button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.register-button:hover {
+  background: #444;
+  transform: translateY(-1px);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .register-page {
+    padding: 40px 15px;
+  }
+
+  .register-container {
+    padding: 30px 22px;
+    border-radius: 12px;
+  }
+
+  .register-container h1 {
+    font-size: 27px;
+  }
+}

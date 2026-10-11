@@ -1,0 +1,452 @@
+/* =========================
+   Navbar
+========================= */
+
+.navbar {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1280px;
+  height: 76px;
+  margin: 0 auto;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =========================
+   Logo
+========================= */
+
+.navbar-logo {
+  color: #111111;
+  text-decoration: none;
+
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 3px;
+
+  transition: opacity 0.2s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.65;
+}
+
+
+/* =========================
+   Navigation
+========================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.navbar-links a {
+  position: relative;
+
+  color: #333333;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: #111111;
+
+  transition: width 0.25s ease;
+}
+
+.navbar-links a:hover {
+  color: #111111;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================
+   Actions
+========================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+
+/* =========================
+   Auth
+========================= */
+
+.navbar-auth,
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-auth a,
+.navbar-user span {
+  color: #333333;
+  text-decoration: none;
+
+  font-size: 14px;
+}
+
+.register-link {
+  padding: 10px 17px;
+
+  background: #111111;
+  color: #ffffff !important;
+
+  border-radius: 4px;
+
+  transition: background 0.2s ease;
+}
+
+.register-link:hover {
+  background: #333333;
+}
+
+
+/* =========================
+   Logout
+========================= */
+
+.navbar-user button {
+  border: none;
+  background: transparent;
+
+  color: #777777;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.navbar-user button:hover {
+  color: #111111;
+}
+
+
+/* =========================
+   Cart
+========================= */
+
+.cart-button {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #111111;
+  text-decoration: none;
+
+  font-size: 19px;
+
+  border-radius: 50%;
+
+  transition: background 0.2s ease;
+}
+
+.cart-button:hover {
+  background: #f5f5f5;
+}
+
+.cart-count {
+  position: absolute;
+
+  top: 1px;
+  right: 0;
+
+  min-width: 17px;
+  height: 17px;
+
+  padding: 0 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #111111;
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   Hamburger
+========================= */
+
+.hamburger {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 8px;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 23px;
+  height: 2px;
+
+  background: #111111;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================
+   Mobile Menu
+========================= */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 900px) {
+
+  .navbar-container {
+    padding: 0 22px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .navbar-actions {
+    gap: 12px;
+  }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 700px) {
+
+  .navbar-container {
+    height: 68px;
+    padding: 0 18px;
+  }
+
+  .navbar-logo {
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+
+    flex-direction: column;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 20px;
+
+    border-top: 1px solid transparent;
+
+    background: #ffffff;
+
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .mobile-menu.open {
+    max-height: 500px;
+
+    padding: 10px 20px 20px;
+
+    border-top: 1px solid #eeeeee;
+  }
+
+  .mobile-menu > a {
+    padding: 15px 0;
+
+    color: #222222;
+    text-decoration: none;
+
+    font-size: 15px;
+
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .mobile-auth {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    padding-top: 18px;
+  }
+
+  .mobile-auth a,
+  .mobile-auth span {
+    color: #333333;
+    text-decoration: none;
+
+    font-size: 14px;
+  }
+
+  .mobile-auth button {
+    width: fit-content;
+
+    border: none;
+    background: transparent;
+
+    padding: 0;
+
+    color: #777777;
+
+    font-size: 14px;
+
+    cursor: pointer;
+  }
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 400px) {
+
+  .navbar-container {
+    padding: 0 14px;
+  }
+
+  .navbar-logo {
+    font-size: 19px;
+  }
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-color, #dedbd4);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-color, #1d1d1a);
+  font-size: 21px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-color, #f0eee8);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--text-color, #1d1d1a);
+  outline-offset: 3px;
+}
+
+
+.mobile-cart-button {
+  display: none;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 22px;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .mobile-cart-button {
+    display: inline-flex;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .navbar-actions .cart-button {
+    display: none;
+  }
+}
